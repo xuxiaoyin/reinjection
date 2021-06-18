@@ -1,0 +1,37 @@
+.promise(@css, @args) {
+    -webkit-@{css}: @args;
+    -moz-@{css}: @args;
+    -ms-@{css}: @args;
+    -o-@{css}: @args;
+    @{css}: @args;
+}
+
+.border(@width: 1PX, @style: solid, @color: transparent) {
+    border: @width @style @color;
+}
+
+.border-top(@width: 1PX, @style: solid, @color: transparent) {
+    border-top: @width @style @color;
+}
+
+.border-left(@width: 1PX, @style: solid, @color: transparent) {
+    border-left: @width @style @color;
+}
+
+.border-right(@width: 1PX, @style: solid, @color: transparent) {
+    border-right: @width @style @color;
+}
+
+.border-bottom(@width: 1PX, @style: solid, @color: transparent) {
+    border-bottom: @width @style @color;
+}
+
+.bg-and-color(@bg, @color) {
+    background: @bg;
+    color: @color;
+}
+
+.bg-and-border(@bg, @border) {
+    background: @bg;
+    border-color: @border;
+}

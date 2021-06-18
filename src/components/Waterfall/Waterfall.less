@@ -1,0 +1,215 @@
+@btn-icon-color: #7B7B7B;
+@el-border-color: #ddd;
+
+.waterfall_component {
+  width: 100%;
+  height: 100%;
+
+  .waterfall-slot-wrapper {
+    overflow: visible !important;
+    width: 100%;
+  }
+
+  i {
+    outline: none;
+  }
+
+  &__waterfall {
+    width: 100%;
+    height: 100% !important;
+    max-height: 100%;
+    overflow-y: auto !important;
+  }
+
+  &.border-top {
+    border-top: @border-width solid @border-color;
+    padding-top: 20px;
+  }
+
+  &__radio-group {
+    position: fixed;
+    right: 30px;
+    z-index: 5;
+    border-radius: 7px;
+    box-shadow: 0 2px 8px 2px rgba(0, 0, 0, .05);
+    button.el-button {
+      font-size: 14px;
+      color: #333;
+      border: @border-width solid #dcdfe6;
+      border-radius: 7px;
+      padding: 10px 14px;
+      background-color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+
+
+      &:first-child {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &.el-button--active,
+      &:hover,
+      &:focus {
+        color: #f08446;
+        opacity: 1;
+      }
+    }
+  }
+
+  .table-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+  /deep/ .el-table {
+    max-height: 100%;
+    overflow-x: auto;
+    background: transparent;
+    border-left: none;
+
+    &:before {
+      height: 0;
+    }
+
+    &__body-wrapper {
+      height: auto !important;
+    }
+
+    & td,
+    & th.is-leaf {
+      border-color: @el-border-color;
+    }
+
+    table th,
+    table tr {
+      background: transparent;
+      padding: 0;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    &--border::after,
+    &--group::after {
+      height: 0;
+    }
+
+    &--border th:first-child,
+    &--border td:first-child {
+      border-left: @border-width solid @el-border-color;
+    }
+
+    .icon {
+      cursor: pointer;
+      color: @btn-icon-color;
+      margin: 0 6px;
+    }
+
+    .icon:hover {
+      color: @main-color;
+    }
+
+  }
+
+  /deep/ .el-table--fit .el-table__body-wrapper {
+    height: calc(100% - 40px) !important;
+  }
+
+
+  .el-container {
+    min-height: 100%;
+    height: 100%;
+  }
+}
+
+.waterfall-item {
+  background-color: #fff;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .el-main {
+    padding: 10px 15px;
+  }
+
+  .item-title {
+    font-size: @fs-16;
+    font-weight: 600;
+    margin: 0;
+    padding: 5px 0;
+    overflow: hidden;
+
+    /deep/ .el-checkbox {
+      display: flex;
+      margin: 0;
+
+      & .el-checkbox__label {
+        font-size: @fs-16;
+        font-weight: 600;
+        color: @main-color--333;
+        line-height: 1;
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+    }
+  }
+
+  /deep/ .waterfall-btn-wrapper,
+  /deep/ .waterfall-warning-footer {
+    width: 100%;
+    height: auto !important;
+    height: 34 px\9 \0 !important;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+    padding: 6px 10px;
+    background: -webkit-linear-gradient(to bottom, #e5e5e5 0%, #eaeaea 100%);
+    background: -o-linear-gradient(to bottom, #e5e5e5 0%, #eaeaea 100%);
+    background: -moz-linear-gradient(to bottom, #e5e5e5 0%, #eaeaea 100%);
+    background: linear-gradient(to bottom, #e5e5e5 0%, #eaeaea 100%);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#e5e5e5', endColorStr='#eaeaea', gradientType='0');
+
+    .icon {
+      cursor: pointer;
+      color: @btn-icon-color;
+      margin: 0 6px;
+    }
+    .icon:hover {
+      color: @main-color;
+    }
+  }
+
+  /deep/ .waterfall-warning-footer {
+    height: 25px !important;
+    min-height: 25px;
+    padding: 0;
+
+    div, p {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.waterfall-main {
+  height: 100%;
+  height: calc(100% - 34px) \9 \0;
+
+  &.full {
+    height: 100% \9 \0;
+  }
+
+  padding: 10px 20px;
+}

@@ -1,0 +1,25 @@
+{
+  "app": {
+    "Lang": {
+      "title": "语言",
+      "zh": "中文",
+      "en": "英文"
+    },
+    "Theme": {
+      "title": "风格",
+      "black": "黑暗",
+      "white": "清新"
+    }
+  },
+  "btnText": {
+    "save": "保存",
+    "reset": "重置",
+    "search": "查询",
+    "backTip":"回到顶部",
+    "expandBtns":"展开按钮组",
+    "packUpBtns":"折叠按钮组",
+    "clear": "清空",
+    "sure": "确定",
+    "addFile": "新增文件"
+  }
+}

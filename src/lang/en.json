@@ -1,0 +1,25 @@
+{
+  "app": {
+    "Lang": {
+      "title": "Language",
+      "zh": "Chinese",
+      "en": "English"
+    },
+    "Theme": {
+      "title": "Style",
+      "black": "Dark",
+      "white": "Fresh"
+    }
+  },
+  "btnText": {
+    "save": "save",
+    "reset": "reset",
+    "search": "search",
+    "backTip":"Back to the top",
+    "expandBtns":"Expand button group",
+    "packUpBtns":"Folding button group",
+    "clear": "Empty",
+    "sure": "Ok",
+    "addFile": "Add File"
+  }
+}

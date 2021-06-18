@@ -1,0 +1,65 @@
+@import './utils.less';
+
+.item-move {
+  .promise(transition, all .5s cubic-bezier(.55, 0, .1, 1));
+}
+
+.vue-waterfall {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  .vue-waterfall-slot {
+    float: left;
+    position: static;
+    position: absolute \9\0;
+    top: 0;
+  }
+}
+
+.item {
+  position: relative;
+  font-size: @fs-14;
+  height: 96%;
+  width: 96%;
+  margin: 2%;
+  cursor: pointer;
+  overflow: hidden;
+  .promise(border-radius, 7px);
+  .border(@color: #e5e4e4);
+
+  &:after {
+    content: attr(index);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    .promise(transform, translate(-50%, -50%));
+  }
+
+  .item_button {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+  }
+
+}
+
+.item_div {
+  margin-left: 20px;
+  font-size: @fs-16;
+  margin-top: 20px;
+}
+
+.item_hr {
+  margin-top: 1px;
+  height: 1px;
+  background: rgb(221, 221, 221);
+}
+
+.wf-transition {
+  .promise(transition, opacity .3s ease);
+}
+
+.wf-enter {
+  opacity: 0;
+}

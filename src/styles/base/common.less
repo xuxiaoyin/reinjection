@@ -1,0 +1,388 @@
+/*
+ * common styles
+ * -----------
+ */
+@import './utils.less';
+[v-cloak] {
+  display:none !important;
+}
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+.library-draggable {
+  max-width: 230px !important;
+  width: 230px !important;
+}
+input,
+button,
+select,
+textarea,
+* {
+  outline: none;
+}
+
+html {
+  font-size: 192PX;
+
+  body {
+    font-size: 16PX;
+    height: 100vh !important;
+
+    #app {
+      font-size: @fs-14;
+      height: 100vh;
+    }
+
+    .content {
+      min-height: 100px;
+    }
+
+    .main-header .logo {
+      height: 51px;
+    }
+  }
+}
+
+.el-scrollbar {
+  //element-ui 下拉框在ios上 点击两次才能选中 bug解决
+  > .el-scrollbar__bar {
+    opacity: 1 !important;
+  }
+}
+
+.el-message-box,
+.el-message {
+  @media (max-width: 420px) {
+    width: 96%;
+    min-width: 96%;
+  }
+}
+
+.el-dialog {
+  min-width: 300px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.el-form {
+  overflow: hidden;
+}
+
+.el-table {
+
+  th,
+  td,
+  th.is-leaf {
+    border-width: @border-width;
+  }
+
+  &__body {
+    width: 100% !important;
+  }
+  th > .cell,.cell{
+    padding-right:30px;
+  }
+  .el-table-column--selection .cell{
+    padding-right:10px;
+  }
+}
+
+.form-group-flex {
+  display: flex;
+  display: table \9;
+  margin-bottom: 10px;
+
+  .el-form-item__content {
+    display: flex;
+    flex: 1;
+    margin: 0 !important;
+  }
+
+  .el-form-item__label {
+    display: table-cell \9;
+    word-wrap: nowrap;
+    float: none;
+  }
+
+  .el-date-editor.el-input,
+  .el-date-editor.el-input__inner {
+    width: 100%;
+    display: block;
+
+    &__prefix {
+      height: auto;
+    }
+
+  }
+
+  @media (max-width: @media_width--768 - 1) {
+    display: block;
+
+    .el-form-item__content,
+    .el-form-item__label {
+      display: block;
+      float: none;
+      text-align: left;
+    }
+
+  }
+}
+
+input[type=file] {
+  display: none;
+  visibility: hidden;
+}
+
+// layout
+.content-wrapper,
+.main-footer {
+  @media (max-width: @media_width--768 - 1) {
+    width: 100%;
+  }
+}
+
+.main-footer {
+  transition: all 0.5s;
+  height: 26px;
+  width: 100%;
+  padding-left: 230px;
+  margin: 0;
+  text-align: center;
+  line-height: 26px;
+  position: fixed;
+  z-index: 0;
+  bottom: 0;
+  right: 0;
+  @media (max-width: @media_width--768 - 1) {
+    padding: 0;
+  }
+}
+
+.sidebar-collapse {
+  .main-footer {
+    padding-left: 50px;
+  }
+}
+
+// sidebar
+.sidebar {
+  overflow-y: auto;
+  height: calc(100vh - 50px);
+
+  @media (max-width: @media_width--768 - 1) {
+    height: calc(100vh - 100px);
+  }
+
+  .sidebar-menu > li > a {
+    padding-left: 40px;
+  }
+
+  &.english .sidebar-menu > li > a {
+    padding-left: 6px;
+  }
+}
+
+// 表单边框
+
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li > a {
+  padding-left: 12px;
+}
+
+.label {
+  font-size: @fs-14;
+  font-weight: 500;
+}
+
+.list-group-item {
+  .border(@width: 0);
+  background: transparent;
+  font-size: calc(@fs-16 - 2px);
+  padding: 0;
+  line-height: 25px;
+}
+
+// select
+.el-select {
+  border-width: @border-width;
+  width: 100%;
+
+  /*no*/
+
+  &.no-border {
+    .el-input__inner {
+      .border(@width: 0);
+    }
+  }
+
+  &-dropdown__item.selected {
+    color: @main-color;
+  }
+}
+
+// button
+.btn {
+  &:active {
+    .promise(box-shadow, none)
+  }
+}
+
+.el-button {
+
+  &:focus,
+  &:hover {
+    border-color: @main-color;
+    background-color: transparent;
+    opacity: 0.8;
+    color: @main-color;
+  }
+
+  &.is-plain {
+    border-width: @border-width;
+  }
+
+  &--primary {
+    .bg-and-border(@main-color, @main-color);
+
+    &:focus,
+    &:hover {
+      .bg-and-border(@main-color, @main-color);
+      color: @white;
+      opacity: 0.8;
+
+    }
+  }
+
+  &--reset {
+    .bg-and-border(@border-color, @border-color);
+    color: @main-color--666;
+
+    &:focus,
+    &:hover {
+      opacity: 0.8;
+      .bg-and-border(@border-color, @border-color);
+      color: @main-color--666;
+    }
+  }
+}
+
+// form-control
+.form-control {
+  &:focus {
+    border-color: @main-color;
+  }
+
+  border-width: 1PX;
+}
+
+.form-group {
+  @media (max-width: @media_width--768 - 1) {
+    margin: 0;
+
+    .label {
+      text-align: left;
+      margin: 10px 0;
+    }
+  }
+}
+
+// input
+.el-input.is-active .el-input__inner,
+.el-input__inner:focus {
+  border-color: @main-color;
+}
+
+.el-input__inner {
+  font-size: @fs-14;
+  border-bottom: @border-width solid @border-color;
+}
+
+// checkbox
+.el-checkbox__input {
+  .el-checkbox__inner {
+    border-width: @border-width;
+
+    &:after {
+      border-width: @border-width + 1 \9 \0;
+      border-width: @border-width;
+    }
+  }
+
+
+  .el-checkbox__inner:hover,
+  .el-checkbox__inner:focus {
+    border-color: @main-color;
+    outline: none;
+  }
+
+  &.is-checked .el-checkbox__inner,
+  &.is-indeterminate .el-checkbox__inner {
+    background-color: @main-color;
+    border-color: @main-color;
+  }
+
+  &.is-checked + .el-checkbox__label {
+    color: @main-color;
+  }
+}
+
+// 图标
+.fa {
+  font-size: @fs-14;
+  font-family: FontAwesome;
+  font-style: normal;
+}
+
+/*超长文本自动省略*/
+.aboutText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  font-size: @fs-14 + 1;
+}
+
+.el-col-right {
+  text-align: right;
+  font-size: @fs-14 + 1;
+
+}
+
+.el-col-left {
+  text-align: left;
+  font-size: @fs-14 + 1;
+}
+
+.rcd-data-title {
+  position: absolute;
+  top: -25px;
+  height:25px;
+  line-height: 25px;
+  span{
+    display: inline-block;
+    line-height: 25px;
+    padding-left:10px;
+    .back-btn{
+      border:none;
+      background-color: transparent;
+      line-height: 22px;
+      padding: 0 8px;
+      margin-left:10px;
+      font-size: @fs-18;
+      &:hover{
+        border:@border-width solid @main-color;
+      }
+    }
+    .drakBtn {
+      color: #fff;
+    }
+  }
+}

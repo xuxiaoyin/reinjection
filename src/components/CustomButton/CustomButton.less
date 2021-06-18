@@ -1,0 +1,38 @@
+@white: #fff;
+@btn-color: #fc9062;
+@btn-active-color: #E78A00;
+
+.customise-button-wrapper {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 10;
+    text-align: right;
+
+    .block {
+        display: block;
+    }
+
+    button {
+        color: @btn-color;
+        border-color: @btn-color;
+        margin: 0 0 10px 10px;
+        padding: 6px;
+        background-color: @white;
+        border-width: @border-width;
+
+
+
+        &:active,
+        &:hover,
+        &:focus {
+            color: @btn-active-color;
+            border-color: @btn-active-color;
+            background-color: @white;
+
+            i {
+                color: inherit;
+            }
+        }
+    }
+}
